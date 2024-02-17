@@ -2,7 +2,6 @@ package com.KindSourcegenius.fleetappmaster.model;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
-import com.fasterxml.jackson.databind.deser.std.DateDeserializers;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,37 +9,39 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
+
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
-public class VehicleMovement {
+public class VehicleMaintenance extends Auditable<String>{
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private int id;
 
     @ManyToOne
-    @JoinColumn(name = "vehicleId",insertable = false,updatable = false)
+    @JoinColumn(name="vehicleid", insertable=false, updatable=false)
     private Vehicle vehicle;
-    private int vehicleId;
+    private Integer vehicleid;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date startDate;
+
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date endDate;
+
+    private String price;
 
     @ManyToOne
-    @JoinColumn(name = "locationId" , insertable = false,updatable = false)
-    private Location location1;
-    private int locationId1;
-
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date date;
-
-    @ManyToOne
-    @JoinColumn(name = "location2_Id")
-    private Location location2;
-    private int locationId2;
-
-    @DateTimeFormat(pattern = "yyyy-mm-dd")
-    private Date date3;
+    @JoinColumn(name="supplierid", insertable=false, updatable=false)
+    private Supplier supplier;
+    private Integer supplierid;
 
     private String remarks;
+
+
 }

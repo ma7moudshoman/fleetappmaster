@@ -37,7 +37,7 @@ public class Vehicle {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name ="vehicleMakeId",insertable = false,updatable = false )
+    @JoinColumn(name ="vehicle_MakeId",insertable = false,updatable = false )
     private VehicleMake vehicleMake;
     private int vehicleMakeid;
 
@@ -45,24 +45,24 @@ public class Vehicle {
     private String fuelCapacity;
 
     @ManyToOne
-    @JoinColumn(name = "vehiclestatusid" ,insertable = false,updatable = false)
+    @JoinColumn(name = "vehicleStatusId" ,insertable = false,updatable = false)
     private VehicleStatus vehicleStatus;
     private int vehicleStatusId;
 
     private String netWeight;
 
     @ManyToOne
-    @JoinColumn(name = "employeeid" ,insertable = false ,updatable = false)
+    @JoinColumn(name = "employeeId" ,insertable = false ,updatable = false)
     private Employee inCharge;
     private int employeeId;
 
     @ManyToOne
-    @JoinColumn(name = "vehicleModelid",insertable = false,updatable = false)
+    @JoinColumn(name = "vehicleModelId",insertable = false,updatable = false)
     private VehicleModel vehicleModel;
     private  int vehicleModelId;
 
     @ManyToOne
-    @JoinColumn(name = "locationid",insertable = false,updatable = false)
+    @JoinColumn(name = "locationId",insertable = false,updatable = false)
     private Location currentLocation;
     private int locationId;
 
