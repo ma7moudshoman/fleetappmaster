@@ -1,8 +1,9 @@
 package com.KindSourcegenius.fleetappmaster.model;
 
-import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+
+import javax.persistence.Entity;
 
 @Entity
 @Data
