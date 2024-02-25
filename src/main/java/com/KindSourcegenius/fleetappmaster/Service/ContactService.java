@@ -3,10 +3,11 @@ package com.KindSourcegenius.fleetappmaster.Service;
 import com.KindSourcegenius.fleetappmaster.Repository.ContactRepo;
 import com.KindSourcegenius.fleetappmaster.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ContactService {
     @Autowired
     private ContactRepo contactRepo;
