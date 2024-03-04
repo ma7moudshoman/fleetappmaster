@@ -22,6 +22,12 @@ public class ClientService {
     public Optional<Client>findById(int id){
         return clientRepo.findById(id);
     }
+    public void save(Client client){
+        clientRepo.save(client);
+    }
+    public void delete(int id){
+        clientRepo.deleteById(id);
+    }
 
 
 }

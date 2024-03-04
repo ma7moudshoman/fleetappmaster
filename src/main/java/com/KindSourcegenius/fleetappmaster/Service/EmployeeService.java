@@ -50,17 +50,18 @@ public class EmployeeService {
 	}
 
 	//Set the Username of the employee where firstname and lastname match
-	public void assignUsername(int id){
-		Employee employee = employeeRepository.findById(id).orElse(null);
+	public void  assignUserName(int id){
+		Employee employee=employeeRepository.findById(id).orElse(null);
 		try {
-			User user = userRepository.findByFirstnameAndLastname(
+			User user=userRepository.findByFirstnameAndLastname(
 					employee.getFirstname(),
 					employee.getLastname());
 			System.out.println(user);
 			employee.setUsername(user.getUsername());
 			employeeRepository.save(employee);
+
 		}
-		catch (Exception ex){
+		catch (Exception e){
 
 		}
 	}

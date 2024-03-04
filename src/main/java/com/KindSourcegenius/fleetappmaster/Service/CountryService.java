@@ -25,7 +25,7 @@ public class CountryService {
     public void deleteCountry(int id){
         countryRepo.deleteById(id);
     }
-    public Country country(Country country){
+    public Country savecountry(Country country){
         return countryRepo.save(country);
     }
 
