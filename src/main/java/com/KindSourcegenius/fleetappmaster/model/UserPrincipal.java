@@ -22,7 +22,7 @@ public class UserPrincipal implements UserDetails {
 //		return Collections.singleton(new SimpleGrantedAuthority("USER"));
 		List<GrantedAuthority> authorities = new ArrayList<>();
 		for(Role role : user.getRoles()){
-			authorities.add(new SimpleGrantedAuthority(role.getDescription()));
+			authorities.add(new SimpleGrantedAuthority(role.getDeclaringClass().descriptorString()));
 		}
 		return  authorities;
 	}

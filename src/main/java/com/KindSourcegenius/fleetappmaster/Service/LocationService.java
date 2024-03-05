@@ -28,4 +28,13 @@ public class LocationService {
     public void deleteLocation(int id){
         locationRepo.deleteById(id);
     }
+
+    public List<Location>findByDescriptionContaining(String description){
+        return null;
+    }
+
+
+
 }
+
+

@@ -16,7 +16,7 @@ public class JobTitleService {
     public List<JobTitle>findAll(){
       return   jobTitleRepo.findAll();
     }
-    public Optional<JobTitle>finaBuId(int id){
+    public Optional<JobTitle>finaById(int id){
          return  jobTitleRepo.findById(id);
     }
 

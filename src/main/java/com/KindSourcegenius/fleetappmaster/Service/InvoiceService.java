@@ -15,7 +15,7 @@ public class InvoiceService {
   private InvoiceRepo invoiceRepo;
 
     //Get All
-    public List<Invoice>findAll(int id){
+    public List<Invoice>findAll(){
         return invoiceRepo.findAll();
     }
 
