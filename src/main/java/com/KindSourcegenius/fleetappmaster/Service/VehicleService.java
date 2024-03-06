@@ -27,6 +27,9 @@ public class VehicleService {
         vehicleRepo.save(vehicle);
     }
 
+    public void deleteByID(int id){
+        vehicleRepo.deleteById(id);
+    }
 
 
 }
